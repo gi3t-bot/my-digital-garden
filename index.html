@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prajjwal Dobriyal</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="main">
+
+    <div id="nav">
+        <h3>0</h3>
+        <h3>Menu</h3>
+    </div>
+
+    <section id="intro">
+        <h1>
+            Prajjwal Dobriyal<br>
+            <span id="typing-text"></span>
+        </h1>
+
+        <div id="place">
+            <h4><i class="ri-arrow-right-down-line"></i>Scroll Down</h4>
+        </div>
+    </section>
+
+    <section id="my_image">
+        <img src="Prajjwal.png" alt="Prajjwal">
+
+        <div id="about">
+            <h2>
+                I build complete web solutions using HTML, CSS, Django, and Python, covering frontend design,
+                backend logic, and data analysis. I focus on clarity, structure, and practical problem-solving
+                across the stack.
+            </h2>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>My Toolbox</h2>
+
+        <div id="skills-right">
+            <div id="skills-icons">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original-wordmark.svg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg">
+            </div>
+        </div>
+    </section>
+
+    <section id="work">
+        <div id="work1">
+            <h3>My Abilities</h3>
+            <i class="ri-arrow-right-down-long-line"></i>
+        </div>
+
+        <div id="work2">
+            <div class="work2-up">
+                <div class="left">
+                    <h4>Python Developer</h4>
+                    <p>Clean logic, readable code, and practical problem solving.</p>
+                </div>
+
+                <div class="right">
+                    <h4>Web and Frontend Developer</h4>
+                    <p>Responsive layouts with strong visual hierarchy.</p>
+                </div>
+            </div>
+
+            <div class="work2-down">
+                <div class="left">
+                    <h4>Backend Developer</h4>
+                    <p>Structured Django backends that support real features.</p>
+                </div>
+
+                <div class="right">
+                    <h4>Data Analysis</h4>
+                    <p>Cleaning data, finding patterns, and visualizing insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+const roles = [
+    "Data Analyst",
+    "Backend Developer",
+    "Web and Frontend Developer",
+    "Python Developer"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingElement = document.getElementById("typing-text");
+
+function typeEffect() {
+    const currentRole = roles[roleIndex];
+
+    if (!isDeleting) {
+        typingElement.textContent = currentRole.slice(0, charIndex++);
+        if (charIndex > currentRole.length) {
+            setTimeout(() => isDeleting = true, 1200);
+        }
+    } else {
+        typingElement.textContent = currentRole.slice(0, charIndex--);
+        if (charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+        }
+    }
+
+    setTimeout(typeEffect, isDeleting ? 60 : 100);
+}
+
+typeEffect();
+</script>
+
+</body>
+</html>

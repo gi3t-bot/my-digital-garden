@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prajjwal Dobriyal - Full Stack Developer</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+<div id="main">
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav id="nav">
+        <div id="nav-left">
+            <h2>Prajjwal</h2>
+        </div>
+        <div id="nav-right">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#work">Work</a>
+            <a href="mailto:your.email@example.com" class="nav-cta">Let's Talk</a>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="intro">
+        <h1>
+            <span class="name">Prajjwal Dobriyal</span>
+            <span id="typing-text"></span>
+        </h1>
+
+        <div id="place">
+            <i class="ri-arrow-right-down-line"></i>
+            <h4>Scroll Down</h4>
+        </div>
+    </section>
+
+    <!-- ========== IMAGE + ABOUT ========== -->
+    <section id="my_image">
+        <img src="Prajjwal.png" alt="Prajjwal Dobriyal">
+
+        <div id="about">
+            <h2>
+                I build complete web solutions using HTML, CSS, Django, and Python, covering frontend design, backend logic, and data analysis. I focus on clarity, structure, and practical problem-solving across the stack.
+            </h2>
+        </div>
+    </section>
+
+    <!-- ========== SKILLS SECTION ========== -->
+    <section id="skills">
+        <h2>My Toolbox</h2>
+
+        <div id="skills-right">
+            <div id="skills-icons">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" title="HTML5">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" title="CSS3">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" title="Python">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" title="MySQL">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg" alt="Django" title="Django">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas" title="Pandas">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original-wordmark.svg" alt="NumPy" title="NumPy">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" title="C">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" title="Java">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABILITIES SECTION ========== -->
+    <section id="work">
+        <div class="work-header">
+            <h3>My Abilities</h3>
+            <i class="ri-arrow-right-down-long-line"></i>
+        </div>
+
+        <div id="work2">
+            <div class="ability-card">
+                <i class="ri-code-line"></i>
+                <h4>Python Developer</h4>
+                <p>Clean logic, readable code, and practical problem solving. Building scalable solutions with best practices.</p>
+            </div>
+
+            <div class="ability-card">
+                <i class="ri-design-pen-line"></i>
+                <h4>Web & Frontend Developer</h4>
+                <p>Responsive layouts with strong visual hierarchy. Creating beautiful, intuitive user experiences.</p>
+            </div>
+
+            <div class="ability-card">
+                <i class="ri-server-line"></i>
+                <h4>Backend Developer</h4>
+                <p>Structured Django backends that support real features. Building robust APIs and databases.</p>
+            </div>
+
+            <div class="ability-card">
+                <i class="ri-bar-chart-2-line"></i>
+                <h4>Data Analysis</h4>
+                <p>Cleaning data, finding patterns, and visualizing insights. Transforming raw data into actionable intelligence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER SECTION ========== -->
+    <section id="footer">
+        <h2>Let's Work Together</h2>
+        <p>I'm always open to new opportunities and interesting projects. Feel free to reach out!</p>
+        <div class="footer-links">
+            <a href="mailto:your.email@example.com">
+                <i class="ri-mail-line"></i>
+                Email
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <i class="ri-github-line"></i>
+                GitHub
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <i class="ri-linkedin-line"></i>
+                LinkedIn
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <i class="ri-twitter-x-line"></i>
+                Twitter
+            </a>
+        </div>
+    </section>
+
+</div>
+
+<script>
+const roles = [
+    "Data Analyst",
+    "Backend Developer",
+    "Web & Frontend Developer",
+    "Python Developer"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingElement = document.getElementById("typing-text");
+
+function typeEffect() {
+    const currentRole = roles[roleIndex];
+
+    if (!isDeleting) {
+        typingElement.textContent = currentRole.slice(0, charIndex++);
+        if (charIndex > currentRole.length) {
+            setTimeout(() => isDeleting = true, 1500);
+        }
+    } else {
+        typingElement.textContent = currentRole.slice(0, charIndex--);
+        if (charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+        }
+    }
+
+    setTimeout(typeEffect, isDeleting ? 60 : 100);
+}
+
+typeEffect();
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+</script>
+
+</body>
+</html>
